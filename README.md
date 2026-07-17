@@ -73,20 +73,19 @@ Die Erweiterung des Modells um Geodaten aus OpenStreetMap und ISOK führte zu ei
 
 ### Immobilien in Hochwasserrisikozonen
 
-![Immobilien in Hochwasserrisikozonen](nierucholosci w strefie ryzyka.png)
+![Immobilien in Hochwasserrisikozonen](nierucholosci%20w%20strefie%20ryzyka.png)
 
 ---
 
 ### Ranking der wichtigsten Modellmerkmale
 
-![Ranking der wichtigsten Modellmerkmale](Ranking ważności cech modelu.png)
+![Ranking der wichtigsten Modellmerkmale](Ranking%20ważności%20cech%20modelu.png)
 
 ---
 
 ### Partial Dependence Plot
 
-![Partial Dependence Plot](Partial Dependence Plot.png)
-
+![Partial Dependence Plot](Partial%20Dependence%20Plot.png)
 ---
 
 ## Fazit
