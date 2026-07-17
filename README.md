@@ -68,7 +68,7 @@ Die Erweiterung des Modells um Geodaten aus OpenStreetMap und ISOK führte zu ei
 
 ### Entfernung zu Gewässern
 
-![Entfernung zu Gewässern](Wroclam weryfikacja odleglosci od wody.png.png).
+![Entfernung zu Gewässern](Wroclam weryfikacja odleglosci od wody.png)
 
 ---
 
