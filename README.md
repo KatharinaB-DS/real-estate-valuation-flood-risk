@@ -5,7 +5,7 @@
 
 Entwicklung eines hybriden Systems zur Immobilienbewertung und Analyse des standortbezogenen Hochwasserrisikos.
 
-Das Projekt integriert strukturierte Immobiliendaten mit Geodaten aus OpenStreetMap sowie offiziellen Hochwassergefahrenkarten ISOK (GUGiK). Ziel ist die automatische Bewertung von Immobilien unter Berücksichtigung klassischer Objektmerkmale und räumlicher Risikofaktoren.
+Das Projekt integriert strukturierte Immobiliendaten mit Geodaten aus OpenStreetMap sowie offiziellen Hochwassergefahrenkarten des ISOK-Systems (GUGiK). Ziel ist die automatische Bewertung von Immobilien unter Berücksichtigung klassischer Objektmerkmale und räumlicher Risikofaktoren.
 
 ---
 
@@ -13,11 +13,11 @@ Das Projekt integriert strukturierte Immobiliendaten mit Geodaten aus OpenStreet
 
 Das entwickelte System verarbeitet Daten aus drei Quellen:
 
-- Apartment Prices in Poland (Kaggle)
-- OpenStreetMap
-- ISOK – Hochwassergefahrenkarten (GUGiK)
+- **Apartment Prices in Poland** (Kaggle)
+- **OpenStreetMap**
+- **ISOK** – Hochwassergefahrenkarten (GUGiK)
 
-Während der Datenaufbereitung werden geopräumliche Merkmale erzeugt, darunter die Entfernung zu Gewässern sowie die Entfernung zu Hochwasserrisikozonen. Anschließend werden diese Merkmale mit den tabellarischen Immobiliendaten kombiniert und in einem LightGBM-Modell zur Vorhersage des Immobilienwertes verarbeitet. Die Ergebnisse werden in Power BI visualisiert. :contentReference[oaicite:3]{index=3}
+Während der Datenaufbereitung werden georäumliche Merkmale erzeugt, darunter die Entfernung zu Gewässern sowie die Entfernung zu Hochwasserrisikozonen. Anschließend werden diese Merkmale mit den tabellarischen Immobiliendaten kombiniert und in einem LightGBM-Modell zur Vorhersage des Immobilienwertes verarbeitet. Die Ergebnisse werden in Power BI visualisiert.
 
 ---
 
@@ -41,34 +41,35 @@ Während der Datenaufbereitung werden geopräumliche Merkmale erzeugt, darunter 
 
 ## Projektergebnisse
 
-- 43.751 Immobilien aus Warschau, Breslau und Danzig
-- Integration von Immobilien- und Geodaten
-- Automatische Berechnung der Entfernung zu Gewässern
-- Automatische Berechnung der Entfernung zu Hochwasserrisikozonen
-- Vorhersage des Immobilienwertes mit LightGBM
-- Interaktive Ergebnisdarstellung in Power BI
+- **Datenbasis:** 43.751 Immobilien aus Warschau, Breslau und Danzig
+- **Integration:** Erfolgreiche Verschmelzung von Immobilien- und Geodaten
+- **Automatisierung:** Automatische Berechnung der Entfernung zu Gewässern
+- **Risikoanalyse:** Automatische Berechnung der Entfernung zu Hochwasserrisikozonen
+- **Prädiktion:** Vorhersage des Immobilienwertes mittels LightGBM
+- **Visualisierung:** Interaktive Ergebnisdarstellung in Power BI
 
 ---
 
 ## Modellergebnisse
 
-| Modell | R² |
-|-------------------------------|------:|
+| Modell | $R^2$ |
+| :--- | ---: |
 | Dummy Regressor | -0.0002 |
 | Lineare Regression | 0.7190 |
 | Ridge Regression | 0.7247 |
-| LightGBM | 0.8353 |
-| **LightGBM + OSM + ISOK** | **0.8514** |
+| LightGBM (nur tabellarische Daten) | 0.8353 |
+| **LightGBM + OSM + ISOK (Hybridmodell)** | **0.8514** |
 
-Die Erweiterung des Modells um Geodaten aus OpenStreetMap und ISOK führte zu einer Verbesserung der Vorhersagegenauigkeit. Die entwickelte Variable **log_distance_to_flood** belegte Platz 2 im Feature-Ranking und bestätigte den Einfluss des Hochwasserrisikos auf den Immobilienwert. :contentReference[oaicite:4]{index=4}
+Die Erweiterung des Modells um Geodaten aus OpenStreetMap und ISOK führte zu einer deutlichen Verbesserung der Vorhersagegenauigkeit. Die entwickelte Variable **`log_distance_to_flood`** belegte Platz 2 im Feature-Importance-Ranking des Modells und bestätigte empirisch den signifikanten Einfluss des Hochwasserrisikos auf den Immobilienwert.
 
 ---
 
 ## 🖼️ Projektvorschau
 
-### Entfernung zu Gewässern
+### Entfernung zu Gewässern (Breslau)
 
 ![Entfernung zu Gewässern](Wroclam%20weryfikacja%20odleglosci%20od%20wody.png)
+
 ---
 
 ### Immobilien in Hochwasserrisikozonen
@@ -77,20 +78,21 @@ Die Erweiterung des Modells um Geodaten aus OpenStreetMap und ISOK führte zu ei
 
 ---
 
-### Ranking der wichtigsten Modellmerkmale
+### Ranking der wichtigsten Modellmerkmale (Feature Importance)
 
 ![Ranking der wichtigsten Modellmerkmale](Ranking%20ważności%20cech%20modelu.png)
 
 ---
 
-### Partial Dependence Plot
+### Partial Dependence Plot (PDP)
 
 ![Partial Dependence Plot](Partial%20Dependence%20Plot.png)
+
 ---
 
 ## Fazit
 
-Im Rahmen der Arbeit wurde ein prototypisches System zur Immobilienbewertung und Bewertung standortbezogener Hochwasserrisiken entwickelt. Die Integration von OpenStreetMap- und ISOK-Daten verbesserte die Modellqualität und zeigte, dass räumliche Merkmale einen messbaren Einfluss auf die Vorhersage des Immobilienwertes haben. :contentReference[oaicite:5]{index=5}
+Im Rahmen der Arbeit wurde ein prototypisches System zur Immobilienbewertung und Bewertung standortbezogener Hochwasserrisiken erfolgreich entwickelt. Die Integration von OpenStreetMap- und ISOK-Daten verbesserte die Modellqualität maßgeblich und demonstrierte, dass räumliche Merkmale einen quantitativ messbaren Einfluss auf die Vorhersage von Immobilienpreisen haben.
 
 ---
 
@@ -104,8 +106,6 @@ Im Rahmen der Arbeit wurde ein prototypisches System zur Immobilienbewertung und
 
 ## Autor
 
-**Katarzyna Brzeski**
-
-Bachelorarbeit – Informatik
-
+**Katarzyna Brzeski**  
+Bachelorarbeit – Informatik  
 Vizja Universität Warschau
